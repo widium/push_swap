@@ -22,7 +22,7 @@ void	push_group_to_b(t_stack **A, t_stack **B, int group, int size_group)
 		if (top->value <= group)
 			push_b(A, B);
 		if (!(smaller_than_groups(A, group)))
-				group += size_group;
+			group += size_group;
 		else
 			choose_rotate_group(A, group);
 	}
