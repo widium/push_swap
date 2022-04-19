@@ -6,7 +6,7 @@
 /*   By: ebennace <ebennace@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/14 15:47:11 by ebennace          #+#    #+#             */
-/*   Updated: 2022/04/18 11:42:31 by ebennace         ###   ########.fr       */
+/*   Updated: 2022/04/18 18:13:51 by ebennace         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include "libft/libft.h"
+# include <limits.h>
 
 typedef struct s_node
 {
@@ -45,6 +46,8 @@ int		check_doublons(char **argv, int argc);
 int		check_nbr_argv(char **argv);
 int		check_args(char **argv, int argc);
 int		check_str(char *argv, int len);
+long	ft_atol(const char *str);
+
 void	set_stack_null(t_stack **A);
 t_stack	*assign_stack_with_1_element(char **argv, int argc);
 t_stack	*assign_stack_with_multiple_element(char **argv, int argc);

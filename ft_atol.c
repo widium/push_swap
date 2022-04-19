@@ -1,20 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_atol.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ebennace <ebennace@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/12 15:48:03 by ebennace          #+#    #+#             */
-/*   Updated: 2022/04/19 09:35:20 by ebennace         ###   ########.fr       */
+/*   Created: 2022/04/18 18:10:46 by ebennace          #+#    #+#             */
+/*   Updated: 2022/04/18 18:13:08 by ebennace         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	main(int argc, char **argv)
+long	ft_atol(const char *str)
 {
-	printf("(%d)\n",ft_atol(argv[1]));
-	printf("(%d)\n",ft_atoi(argv[1]));
-	//sort(argv, argc);
+	int		i;
+	long	res;
+	int		nv;
+
+	nv = 1;
+	res = 0;
+	i = 0;
+	while (str[i] == 32 || (str[i] >= 8 && str[i] <= 13))
+		i++;
+	if (str[i] == 45)
+	{
+		nv = -1;
+		i++;
+	}
+	else if (str[i] == 43)
+	{
+		i++;
+	}
+	while (str[i] >= '0' && str[i] <= '9')
+	{
+		res = res * 10 + str[i] - '0';
+		i++;
+	}
+	return (res * nv);
 }
