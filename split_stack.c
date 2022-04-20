@@ -34,8 +34,6 @@ void	split_stack_mean(t_stack **A, t_stack **B)
 	{
 		size = (*A)->size;
 		top = (*A)->top;
-		if (size <= 3)
-			break ;
 		if (top->value <= group)
 			push_b(A, B);
 		else
