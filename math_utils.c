@@ -6,7 +6,7 @@
 /*   By: ebennace <ebennace@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/14 14:48:49 by ebennace          #+#    #+#             */
-/*   Updated: 2022/04/18 12:08:00 by ebennace         ###   ########.fr       */
+/*   Updated: 2022/04/20 16:57:22 by ebennace         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,23 @@ int	get_range(t_stack **A)
 	return (range);
 }
 
+int	detect_outliers(t_stack **A, int mean)
+{
+	t_node	*iter;
+	int		count;
+
+	count = 0;
+	iter = (*A)->bot;
+	while (iter)
+	{
+		if (iter->value <= mean)
+			count++;
+		iter = iter->next;
+	}
+	if (count >= 4)
+		return (1);
+	return (0);
+}
 // int	get_mediane_average(t_stack **A)
 // {
 // 	int		mediane_value;

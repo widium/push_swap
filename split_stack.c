@@ -6,7 +6,7 @@
 /*   By: ebennace <ebennace@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/14 14:36:49 by ebennace          #+#    #+#             */
-/*   Updated: 2022/04/19 17:26:00 by ebennace         ###   ########.fr       */
+/*   Updated: 2022/04/20 16:32:27 by ebennace         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,18 +26,20 @@ void	choose_type_of_split(t_stack **A, t_stack **B)
 void	split_stack_mean(t_stack **A, t_stack **B)
 {
 	int		size;
-	int		group;
+	int		mean;
 	t_node	*top;
 
-	group = get_mean(A);
-	while (smaller_than_groups(A, group))
+	mean = get_mean(A);
+	if (detect_outliers(A, mean))
+		mean -= (mean / 3);
+	while (smaller_than_groups(A, mean))
 	{
 		size = (*A)->size;
 		top = (*A)->top;
-		if (top->value <= group)
+		if (top->value <= mean)
 			push_b(A, B);
 		else
-			choose_rotate_group(A, group);
+			choose_rotate_group(A, mean);
 	}
 }
 

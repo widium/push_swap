@@ -18,7 +18,8 @@ SRCS		= manage_args.c \
 			  choose_rotate.c \
 			  sorting.c \
 			  check.c \
-			  ft_atol.c
+			  ft_atol.c \
+			  candidate.c
 
 
 

@@ -6,7 +6,7 @@
 /*   By: ebennace <ebennace@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/15 14:50:13 by ebennace          #+#    #+#             */
-/*   Updated: 2022/04/20 10:05:20 by ebennace         ###   ########.fr       */
+/*   Updated: 2022/04/20 17:01:05 by ebennace         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ int	check_args(char **argv, int argc)
 	i = 0;
 	while (i < argc)
 	{
+		if (!(check_nbr_argv(argv)))
+			return (-1);
 		if (!(check_digit_in_str(argv, check_nbr_argv(argv))))
 			return (0);
 		if (!(check_doublons(argv, argc)))
@@ -37,14 +39,17 @@ int	check_digit_in_str(char **argv, int len)
 {
 	int	i;
 	int	y;
+	int	lan;
 
-	i = 0;
 	y = 0;
 	while (y < len)
 	{
-		while (i < len)
+		lan = ft_strlen(argv[y]);
+		i = 0;
+		while (i < lan)
 		{
-			if (!((*argv[i] >= '0' && *argv[i] <= '9') || (*argv[i] == '-')))
+			if (!((argv[y][i] >= '0' && argv[y][i] <= '9')
+			|| (argv[y][i] == '-')))
 				return (0);
 			i++;
 		}

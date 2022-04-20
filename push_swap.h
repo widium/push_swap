@@ -6,7 +6,7 @@
 /*   By: ebennace <ebennace@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/14 15:47:11 by ebennace          #+#    #+#             */
-/*   Updated: 2022/04/20 10:58:55 by ebennace         ###   ########.fr       */
+/*   Updated: 2022/04/20 18:37:21 by ebennace         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,7 @@ void			display(t_stack **A, t_stack **B);
 void			connect_node(t_node *curr_node, t_node *next_node);
 t_stack			*organize_stack(char **argv, int argc);
 int				manage_args(int argc, char **argv, t_stack **a, t_stack **b);
+int				check_empty_argv(char **argv, int len);
 int				check_doublons(char **argv, int argc);
 int				check_doublons_for_argc(char **argv, int argc);
 int				check_doublons_for_argv(char **argv);
@@ -85,15 +86,21 @@ int				get_mean(t_stack **A);
 int				larger_than_groups(t_stack **A, int group);
 int				smaller_than_groups(t_stack **A, int group);
 int				index_of_shortest_candidate(t_stack **A, int group);
+int				get_candidate_top(t_stack **A, t_node *top, int group);
+int				get_candidate_bot(t_stack **A, t_node *bot, int group);
+t_node			*get_node_index_top(t_stack **A, int index_top);
+t_node			*get_node_index_bot(t_stack **A, int index_bot);
 
 int				is_min(t_stack **B, int value);
 int				is_max(t_stack **A, int value);
 int				get_sqrt(int nbr);
+int				detect_outliers(t_stack **A, int mean);
 void			split_stack_group(t_stack **A, t_stack **B);
 void			split_stack_mean(t_stack **A, t_stack **B);
 void			choose_type_of_split(t_stack **A, t_stack **B);
 
 int				get_index(t_stack **A, int value);
+int				get_index_top(t_stack **A, int value);
 t_node			*get_middle(t_stack **A);
 
 t_node			*get_max(t_stack **A);

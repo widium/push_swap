@@ -1,6 +1,7 @@
 {
     "files.associations": {
-        "push_swap.h": "c"
+        "push_swap.h": "c",
+        "type_traits": "c"
     },
     "C_Cpp.errorSquiggles": "Disabled"
 }

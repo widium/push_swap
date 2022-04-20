@@ -6,7 +6,7 @@
 /*   By: ebennace <ebennace@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/14 11:23:04 by ebennace          #+#    #+#             */
-/*   Updated: 2022/04/20 10:06:20 by ebennace         ###   ########.fr       */
+/*   Updated: 2022/04/20 14:30:48 by ebennace         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,19 +31,23 @@ int	manage_args(int argc, char **argv, t_stack **A, t_stack **B)
 	char	**arguments;
 
 	if (argc == 1)
-		return (0);
+		return (-1);
 	else if (argc == 2)
 	{
 		arguments = ft_split(argv[1], ' ');
 		nbr_of_elements = check_args(arguments, argc);
 		if (!nbr_of_elements)
 			return (0);
+		else if (!nbr_of_elements)
+			return (-1);
 		*A = organize_stack(arguments, nbr_of_elements);
 	}
 	else
 	{
 		if (!(check_args(argv + 1, argc)))
 			return (0);
+		else if (check_args(argv + 1, argc) == -1)
+			return (-1);
 		*A = organize_stack(argv + 1, argc - 1);
 	}
 	return (1);
