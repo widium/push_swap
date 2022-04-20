@@ -6,7 +6,7 @@
 /*   By: ebennace <ebennace@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/12 15:48:03 by ebennace          #+#    #+#             */
-/*   Updated: 2022/04/19 09:35:20 by ebennace         ###   ########.fr       */
+/*   Updated: 2022/04/20 10:58:15 by ebennace         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,5 @@
 
 int	main(int argc, char **argv)
 {
-	printf("(%d)\n",ft_atol(argv[1]));
-	printf("(%d)\n",ft_atoi(argv[1]));
-	//sort(argv, argc);
+	sort(argv, argc);
 }

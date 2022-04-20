@@ -6,17 +6,17 @@
 /*   By: ebennace <ebennace@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/18 18:10:46 by ebennace          #+#    #+#             */
-/*   Updated: 2022/04/18 18:13:08 by ebennace         ###   ########.fr       */
+/*   Updated: 2022/04/20 10:18:30 by ebennace         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-long	ft_atol(const char *str)
+long long int	ft_atol(const char *str)
 {
-	int		i;
-	long	res;
-	int		nv;
+	long long int	i;
+	long long int	res;
+	long long int	nv;
 
 	nv = 1;
 	res = 0;

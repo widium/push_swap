@@ -3,12 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ebennace <marvin@42lausanne.ch>            +#+  +:+       +#+        */
+/*   By: ebennace <ebennace@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/13 15:51:09 by ebennace          #+#    #+#             */
-/*   Updated: 2021/10/28 16:55:46 by ebennace         ###   ########.fr       */
+/*   Updated: 2022/04/19 10:28:45 by ebennace         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #ifndef LIBFT_H
 # define LIBFT_H
 

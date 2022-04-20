@@ -6,7 +6,7 @@
 /*   By: ebennace <ebennace@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/14 11:01:24 by ebennace          #+#    #+#             */
-/*   Updated: 2022/04/18 10:06:44 by ebennace         ###   ########.fr       */
+/*   Updated: 2022/04/19 17:54:12 by ebennace         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,10 +37,10 @@ t_stack	*assign_stack_with_multiple_element(char **argv, int argc)
 	int		size;
 
 	size = 0;
-	i = 0;
-	while (argv[i] != NULL)
+	i = argc - 1;
+	while (i >= 0)
 	{
-		if (i < 1)
+		if (i == argc - 1)
 		{
 			curr_node = create_and_assign_node(argv, i);
 			tmp = curr_node;
@@ -50,7 +50,7 @@ t_stack	*assign_stack_with_multiple_element(char **argv, int argc)
 			node_next = create_assign_connect_node(curr_node, argv, i);
 			curr_node = node_next;
 		}
-		i++;
+		i--;
 		size++;
 	}
 	return (create_and_assign_stack(tmp, node_next, size));

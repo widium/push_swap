@@ -1,0 +1,4 @@
+[ZoneTransfer]
+ZoneId=3
+ReferrerUrl=https://github.com/o-reo/push_swap_visualizer/releases/tag/v1-python
+HostUrl=https://objects.githubusercontent.com/github-production-release-asset-2e65be/125204787/f83c94cd-3483-41da-b2a0-79350c928378?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIWNJYAX4CSVEH53A%2F20220420%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20220420T092422Z&X-Amz-Expires=300&X-Amz-Signature=d936c8769b5e37c0be8932e6b05c763f6194ed1b2c87679e99965a4391e1cedb&X-Amz-SignedHeaders=host&actor_id=85416801&key_id=0&repo_id=125204787&response-content-disposition=attachment%3B%20filename%3Dvisualizer.py&response-content-type=application%2Foctet-stream

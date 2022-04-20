@@ -3,12 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ebennace <marvin@42lausanne.ch>            +#+  +:+       +#+        */
+/*   By: ebennace <ebennace@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/17 18:24:37 by ebennace          #+#    #+#             */
-/*   Updated: 2021/10/17 18:24:39 by ebennace         ###   ########.fr       */
+/*   Updated: 2022/04/19 10:12:46 by ebennace         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "libft.h"
 
 int	ft_atoi(const char *str)

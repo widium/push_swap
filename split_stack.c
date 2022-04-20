@@ -6,7 +6,7 @@
 /*   By: ebennace <ebennace@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/14 14:36:49 by ebennace          #+#    #+#             */
-/*   Updated: 2022/04/18 11:03:55 by ebennace         ###   ########.fr       */
+/*   Updated: 2022/04/19 17:26:00 by ebennace         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,11 +29,13 @@ void	split_stack_mean(t_stack **A, t_stack **B)
 	int		group;
 	t_node	*top;
 
-	size = (*A)->size;
 	group = get_mean(A);
 	while (smaller_than_groups(A, group))
 	{
+		size = (*A)->size;
 		top = (*A)->top;
+		if (size <= 3)
+			break ;
 		if (top->value <= group)
 			push_b(A, B);
 		else

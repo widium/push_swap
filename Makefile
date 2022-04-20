@@ -24,7 +24,8 @@ SRCS		= manage_args.c \
 
 OBJS			= $(SRCS:.c=.o)
 CC				= clang
-FLAGS 			= -g 
+FLAGS 			= -g
+SANITIZE		= -fsanitize=address
 
 $(NAME) : 		$(OBJS)
 				make -C libft
@@ -42,6 +43,12 @@ clean :
 fclean : clean
 				make fclean -C libft
 				/bin/rm -rf $(NAME)
+sanitize : 		
+				$(CC) $(FLAGS) $(SANITIZE) $(OBJS) libft/libft.a -o $(NAME)
+				
+
+test : 
+				./$(NAME) `python3 generator.py 0 1000 5`
 
 re : fclean all
 .PHONY			: all clean fclean re

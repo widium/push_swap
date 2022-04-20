@@ -6,7 +6,7 @@
 /*   By: ebennace <ebennace@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/14 14:50:11 by ebennace          #+#    #+#             */
-/*   Updated: 2022/04/18 11:34:22 by ebennace         ###   ########.fr       */
+/*   Updated: 2022/04/20 09:59:15 by ebennace         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int	is_sorted(t_stack **A)
 	i = 0;
 	while (i < (size - 1))
 	{
-		if (iter->value > iter->next->value)
+		if (iter->value < iter->next->value)
 			return (0);
 		i++;
 		iter = iter->next;
@@ -37,12 +37,12 @@ int	inverse_sorted(t_stack **A)
 	int		i;
 	t_node	*iter;
 
-	iter = (*A)->top;
+	iter = (*A)->bot;
 	size = (*A)->size;
 	i = 0;
 	while (i < (size - 1))
 	{
-		if (iter->value > iter->prev->value)
+		if (iter->value < iter->prev->value)
 			return (0);
 		i++;
 		iter = iter->prev;
@@ -62,14 +62,18 @@ int	swap_min_max(t_stack **A, t_node *top_prev, t_node *top)
 	return (0);
 }
 
-// void	print_str_str(char **argv)
-// {
-// 	int	i;
+int	check_max_min_int(char **argv, int argc)
+{
+	int				i;
+	long long int	current_arg;
 
-// 	i = 0;
-// 	while (argv[i])
-// 	{
-// 		printf("(%s)\n", argv[i]);
-// 		i++;
-// 	}
-// }
+	i = 0;
+	while (i < argc)
+	{
+		current_arg = ft_atol(argv[i]);
+		if (current_arg > INT_MAX || current_arg < INT_MIN)
+			return (0);
+		i++;
+	}
+	return (1);
+}

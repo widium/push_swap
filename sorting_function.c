@@ -6,7 +6,7 @@
 /*   By: ebennace <ebennace@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/14 11:44:58 by ebennace          #+#    #+#             */
-/*   Updated: 2022/04/18 12:02:52 by ebennace         ###   ########.fr       */
+/*   Updated: 2022/04/20 10:17:14 by ebennace         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,14 @@
 void	push_group_to_b(t_stack **A, t_stack **B, int group, int size_group)
 {
 	t_node	*top;
+	int		size;
 
 	while (smaller_than_groups(A, group))
 	{
+		size = (*A)->size;
 		top = (*A)->top;
+		if (size <= 3)
+			break ;
 		if (top->value <= group)
 			push_b(A, B);
 		if (!(smaller_than_groups(A, group)))
@@ -48,7 +52,7 @@ void	sort_a(t_stack **A, t_stack **B)
 
 	if (!(*A)->top)
 		return ;
-	while (!(inverse_sorted(A)))
+	while (!(is_sorted(A)))
 	{
 		size = (*A)->size;
 		top = (*A)->top;
