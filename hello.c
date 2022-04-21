@@ -1,18 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   hello.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ebennace <ebennace@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/12 15:48:03 by ebennace          #+#    #+#             */
-/*   Updated: 2022/04/21 13:34:38 by ebennace         ###   ########.fr       */
+/*   Created: 2022/04/21 13:47:02 by ebennace          #+#    #+#             */
+/*   Updated: 2022/04/21 13:47:25 by ebennace         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include <stdio.h>
 
-int	main(int argc, char **argv)
+int	main(void)
 {
-	sort(argv, argc);
+	printf("Hello, World! \n");
+	return (0);
 }

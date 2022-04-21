@@ -6,7 +6,7 @@
 /*   By: ebennace <ebennace@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/14 15:47:11 by ebennace          #+#    #+#             */
-/*   Updated: 2022/04/20 18:37:21 by ebennace         ###   ########.fr       */
+/*   Updated: 2022/04/21 11:28:37 by ebennace         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,12 +36,12 @@ typedef struct s_stack
 t_node			*create_node(void);
 t_stack			*create_stack(void);
 
-void			print_stack(t_node *tmp);
+void			print_stack(t_stack **A);
 void			display(t_stack **A, t_stack **B);
 
 void			connect_node(t_node *curr_node, t_node *next_node);
-t_stack			*organize_stack(char **argv, int argc);
-int				manage_args(int argc, char **argv, t_stack **a, t_stack **b);
+t_stack			*organize_stack(char **argv, int argc, t_stack *A);
+int				manage_args(int argc, char **argv, t_stack *a, t_stack *b);
 int				check_empty_argv(char **argv, int len);
 int				check_doublons(char **argv, int argc);
 int				check_doublons_for_argc(char **argv, int argc);
@@ -52,12 +52,13 @@ int				check_digit_in_str(char **argv, int len);
 int				check_max_min_int(char **argv, int argc);
 long long int	ft_atol(const char *str);
 
-void			set_stack_null(t_stack **A);
-t_stack			*assign_stack_with_1_element(char **argv, int argc);
-t_stack			*assign_stack_with_multiple_element(char **argv, int argc);
+void			set_stack_null(t_stack *A);
+t_stack			*assign_stack_with_1_element(char **argv, int argc, t_stack *A);
+t_stack			*assign_stack_with_multiple_element(char **argv, int argc, t_stack *A);
 t_node			*create_and_assign_node(char **argv, int i);
-t_stack			*create_and_assign_stack(t_node *bot, t_node *top, int size);
+t_stack			*assign_stack(t_node *bot, t_node *top, int size, t_stack *A);
 t_node			*create_assign_connect_node(t_node *node, char **argv, int i);
+
 int				create_groups_for_split(t_stack **A);
 int				create_size_group(t_stack **A);
 
@@ -115,4 +116,8 @@ void			sort(char **argv, int argc);
 void			push_max_b_to_a(t_stack **A, t_stack **B);
 void			push_group_to_b(t_stack **A, t_stack **B, int grp, int siz_grp);
 void			print_str_str(char **argv);
+
+int				free_nodes(t_stack *A);
+int				free_stack(t_stack *A);
+int				free_all(t_stack *A, t_stack *B);
 #endif

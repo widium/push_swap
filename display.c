@@ -6,7 +6,7 @@
 /*   By: ebennace <ebennace@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/14 10:55:12 by ebennace          #+#    #+#             */
-/*   Updated: 2022/04/20 10:59:22 by ebennace         ###   ########.fr       */
+/*   Updated: 2022/04/21 10:16:49 by ebennace         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,13 +42,16 @@ void	display(t_stack **A, t_stack **B)
 	}
 }
 
-void	print_stack(t_node *tmp)
+void	print_stack(t_stack **A)
 {
+	t_node	*iter;
+
+	iter = (*A)->bot;
 	printf("--- Stack ---\n");
-	while (tmp != NULL)
+	while (iter)
 	{
-		printf("    | %d |\n", tmp->value);
-		tmp = tmp->next;
+		printf("    | %d |\n", iter->value);
+		iter = iter->next;
 	}
 	printf("-------------\n");
 }

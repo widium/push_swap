@@ -6,7 +6,7 @@
 /*   By: ebennace <ebennace@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/14 11:46:36 by ebennace          #+#    #+#             */
-/*   Updated: 2022/04/18 10:00:45 by ebennace         ###   ########.fr       */
+/*   Updated: 2022/04/21 11:30:14 by ebennace         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	push_b(t_stack **A, t_stack **B)
 		return ;
 	top_a_before = (*A)->top->prev;
 	if (!top_a_before)
-		set_stack_null(A);
+		set_stack_null(*A);
 	else
 	{
 		top_a_before->next = NULL;
@@ -53,7 +53,7 @@ void	push_a(t_stack **A, t_stack **B)
 		return ;
 	top_b_before = (*B)->top->prev;
 	if (!top_b_before)
-		set_stack_null(B);
+		set_stack_null(*B);
 	else
 	{
 		top_b_before->next = NULL;

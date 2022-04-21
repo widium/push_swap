@@ -6,7 +6,7 @@
 /*   By: ebennace <ebennace@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/20 17:48:08 by ebennace          #+#    #+#             */
-/*   Updated: 2022/04/20 18:44:29 by ebennace         ###   ########.fr       */
+/*   Updated: 2022/04/21 14:36:23 by ebennace         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,31 +14,24 @@
 
 int	index_of_shortest_candidate(t_stack **A, int group)
 {
-	int		candidate_top;
-	int		candidate_bot;
-	t_node	*top;
-	t_node	*bot;
+	int		index_candidate_top;
+	int		index_candidate_bot;
 	t_node	*node_candidate_top;
 	t_node	*node_candidate_bot;
 
-	top = (*A)->top;
-	bot = (*A)->bot;
-	candidate_top = get_candidate_top(A, top, group);
-	candidate_bot = get_candidate_bot(A, bot, group);
-	printf("candidate_top -> (%d)\n", candidate_top);
-	printf("candidate_bot -> (%d)\n", candidate_bot);
-	node_candidate_top = get_node_index_top(A, candidate_top);
-	node_candidate_bot = get_node_index_bot(A, candidate_bot - 1);
-	printf("candidate_top -> (%d)\n", node_candidate_top->value);
-	printf("candidate_bot -> (%d)\n", node_candidate_bot->value);
-	if (candidate_top <= candidate_bot)
+	index_candidate_top = get_candidate_top(A, (*A)->top, group);
+	index_candidate_bot = get_candidate_bot(A, (*A)->bot, group);
+	node_candidate_top = get_node_index_top(A, index_candidate_top);
+	node_candidate_bot = get_node_index_bot(A, index_candidate_bot - 1);
+	if (index_candidate_top <= index_candidate_bot)
 		return (get_index(A, node_candidate_top->value));
 	return (get_index(A, node_candidate_bot->value));
 }
 
 int	get_candidate_top(t_stack **A, t_node *top_iter, int group)
 {
-	int	candidate_top;
+	int		candidate_top;
+	t_node	*next;
 
 	while (top_iter)
 	{
@@ -47,25 +40,28 @@ int	get_candidate_top(t_stack **A, t_node *top_iter, int group)
 			candidate_top = get_index_top(A, top_iter->value);
 			return (candidate_top);
 		}
+		next = top_iter;
 		top_iter = top_iter->prev;
 	}
-	return (get_index_top(A, top_iter->next->value));
+	return (get_index(A, next->value));
 }
 
-int	get_candidate_bot(t_stack **A, t_node *bot, int group)
+int	get_candidate_bot(t_stack **A, t_node *bot_iter, int group)
 {
-	int	candidate_bot;
+	int		candidate_bot;
+	t_node	*prev;
 
-	while (bot)
+	while (bot_iter)
 	{
-		if (bot->value < group)
+		if (bot_iter->value < group)
 		{
-			candidate_bot = get_index(A, bot->value) + 1;
+			candidate_bot = get_index(A, bot_iter->value) + 1;
 			return (candidate_bot);
 		}
-		bot = bot->next;
+		prev = bot_iter;
+		bot_iter = bot_iter->next;
 	}
-	return (get_index(A, bot->prev->value));
+	return (get_index(A, prev->value));
 }
 
 t_node	*get_node_index_top(t_stack **A, int index_top)
@@ -99,5 +95,5 @@ t_node	*get_node_index_bot(t_stack **A, int index_bot)
 		i++;
 		iter = iter->next;
 	}
-	return (iter->next);
+	return (iter->prev);
 }

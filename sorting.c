@@ -6,7 +6,7 @@
 /*   By: ebennace <ebennace@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/14 11:53:50 by ebennace          #+#    #+#             */
-/*   Updated: 2022/04/20 18:04:05 by ebennace         ###   ########.fr       */
+/*   Updated: 2022/04/21 14:17:56 by ebennace         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,25 +14,24 @@
 
 void	sort(char **argv, int argc)
 {
+	int		result;
 	t_stack	*a;
 	t_stack	*b;
 
 	a = create_stack();
 	b = create_stack();
-	if (!(manage_args(argc, argv, &a, &b)))
+	result = manage_args(argc, argv, a, b);
+	if (result == 0)
 	{
 		ft_putstr_fd("Error\n", 1);
 		return ;
 	}
-	else if (manage_args(argc, argv, &a, &b) == -1)
+	if (result == -1)
 		return ;
 	if (is_sorted(&a))
 		return ;
-	display(&a, &b);
 	choose_type_of_split(&a, &b);
-	display(&a, &b);
 	sort_a(&a, &b);
-	display(&a, &b);
 	push_max_b_to_a(&a, &b);
-	display(&a, &b);
+	free_all(a, b);
 }

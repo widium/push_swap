@@ -6,7 +6,7 @@
 /*   By: ebennace <ebennace@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/14 10:57:06 by ebennace          #+#    #+#             */
-/*   Updated: 2022/04/14 11:43:14 by ebennace         ###   ########.fr       */
+/*   Updated: 2022/04/21 11:29:14 by ebennace         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,15 +38,12 @@ t_stack	*create_stack(void)
 	return (ptr);
 }
 
-t_stack	*create_and_assign_stack(t_node *bot, t_node *top, int size)
+t_stack	*assign_stack(t_node *bot, t_node *top, int size, t_stack *A)
 {
-	t_stack	*stack;
-
-	stack = create_stack();
-	stack->size = size;
-	stack->bot = bot;
-	stack->top = top;
-	return (stack);
+	A->size = size;
+	A->bot = bot;
+	A->top = top;
+	return (A);
 }
 
 t_node	*create_and_assign_node(char **argv, int i)

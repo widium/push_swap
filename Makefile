@@ -1,3 +1,15 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: ebennace <ebennace@student.42lausanne.c    +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2022/04/21 14:19:55 by ebennace          #+#    #+#              #
+#    Updated: 2022/04/21 14:19:56 by ebennace         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 
 NAME = push_swap
 
@@ -19,7 +31,8 @@ SRCS		= manage_args.c \
 			  sorting.c \
 			  check.c \
 			  ft_atol.c \
-			  candidate.c
+			  candidate.c \
+			  free_all.c
 
 
 
@@ -44,12 +57,17 @@ clean :
 fclean : clean
 				make fclean -C libft
 				/bin/rm -rf $(NAME)
-sanitize : 		
+sanitize : 		$(OBJS)
 				$(CC) $(FLAGS) $(SANITIZE) $(OBJS) libft/libft.a -o $(NAME)
+				./$(NAME) 3 2 1
 				
 
 test : 
 				./$(NAME) `python3 generator.py 0 1000 5`
+
+lldb:
+				$(CC) -g $(SRCS) libft/libft.a -o $(NAME)
+				lldb $(NAME)
 
 re : fclean all
 .PHONY			: all clean fclean re
