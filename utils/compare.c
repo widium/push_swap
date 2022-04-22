@@ -75,21 +75,21 @@ int	is_max(t_stack **A, int value)
 	int		i;
 	int		size;
 	t_node	*iter;
-	t_node	*iter2;
+	t_node	*max;
 
 	i = 0;
 	size = (*A)->size;
-	iter2 = (*A)->bot;
+	max = (*A)->bot;
 	iter = (*A)->bot;
 	while (i < (size + 1))
 	{
-		if (iter->value > iter2->value)
-			iter2 = iter;
+		if (iter->value > max->value)
+			max = iter;
 		i++;
 		if (i < size)
 			iter = iter->next;
 	}
-	if (iter2->value == value)
+	if (max->value == value)
 		return (1);
 	return (0);
 }

@@ -50,7 +50,7 @@ all : 			$(NAME)
 
 clean :
 				make clean -C libft
-				/bin/rm -rf *.o
+				/bin/rm -rf $(OBJS)
 
 fclean : clean
 				make fclean -C libft

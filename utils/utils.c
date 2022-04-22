@@ -40,12 +40,16 @@ int	inverse_sorted(t_stack **A)
 	iter = (*A)->bot;
 	size = (*A)->size;
 	i = 0;
-	while (i < (size - 1))
+	while (iter)
 	{
-		if (iter->value < iter->prev->value)
-			return (0);
-		i++;
-		iter = iter->prev;
+		if (iter->prev)
+		{
+			if (iter->value < iter->prev->value)
+				return (0) ;
+			iter = iter->prev;
+		}
+		else
+			break ;
 	}
 	return (1);
 }

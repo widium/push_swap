@@ -80,6 +80,7 @@ void			reverse(t_stack **A, t_stack **B);
 void			choose_rotate_max(t_stack **A);
 void			choose_rotate_min(t_stack **A);
 void			choose_rotate_group(t_stack **A, int group);
+void			choose_faster(t_stack **A, int min, int mid, int max);
 int				swap_min_max(t_stack **A, t_node *top_prev, t_node *top);
 
 int				get_range(t_stack **A);
@@ -106,12 +107,13 @@ t_node			*get_middle(t_stack **A);
 
 t_node			*get_max(t_stack **A);
 t_node			*get_min(t_stack **A);
-int				get_mediane_average(t_stack **A);
+t_node			*get_middle_node(t_stack **A);
 
 int				is_sorted(t_stack **A);
 int				inverse_sorted(t_stack **A);
 
 void			sort_a(t_stack **A, t_stack **B);
+void			sort_fast(t_stack **A, t_stack **B);
 void			sort(char **argv, int argc);
 void			push_max_b_to_a(t_stack **A, t_stack **B);
 void			push_group_to_b(t_stack **A, t_stack **B, int grp, int siz_grp);

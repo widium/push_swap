@@ -30,6 +30,11 @@ void	sort(char **argv, int argc)
 		return ;
 	if (is_sorted(&a))
 		return ;
+	if (a->size < 4)
+	{
+		sort_fast(&a, &b);
+		return ;
+	}
 	choose_type_of_split(&a, &b);
 	sort_a(&a, &b);
 	push_max_b_to_a(&a, &b);

@@ -80,38 +80,21 @@ int	detect_outliers(t_stack **A, int mean)
 		return (1);
 	return (0);
 }
-// int	get_mediane_average(t_stack **A)
-// {
-// 	int		mediane_value;
-// 	int		before_mediane_value;
-// 	int		average_mediane;
-// 	int		me;
-// 	int		size;
-// 	int		i;
-// 	t_node	*iter;
 
-// 	iter = (*A)->bot;
-// 	size = (*A)->size;
+t_node	*get_middle_node(t_stack **A)
+{
+	t_node	*iter;
+	t_node	*max;
+	t_node	*min;
 
-// 	//printf("Size -> (%d)\n", size);
-// 	if (size < 2)
-// 		return ((*A)->top->value);
-
-// 	me = size / 2;	
-// 	i = 0;
-// 	while (i < (me + 1))
-// 	{
-// 		if (i >= 1)
-// 			before_mediane_value = iter->prev->value;
-// 		mediane_value = iter->value;
-// 		i++;
-// 		iter = iter->next;
-// 	}
-// 	if (size % 2 == 0)
-// 	{
-// 		average_mediane = (before_mediane_value + mediane_value) / 2;
-// 		return (average_mediane);
-// 	}
-// 	else
-// 		return (mediane_value);
-// }
+	iter = (*A)->bot;
+	max = get_max(A);
+	min = get_min(A);
+	while (iter)
+	{
+		if (iter->value != max->value && iter->value != min->value)
+			return (iter);
+		iter = iter->next;
+	}
+	return (iter);
+}
