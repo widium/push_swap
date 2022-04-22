@@ -6,7 +6,7 @@
 /*   By: ebennace <ebennace@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/14 14:50:11 by ebennace          #+#    #+#             */
-/*   Updated: 2022/04/22 09:24:14 by ebennace         ###   ########.fr       */
+/*   Updated: 2022/04/22 16:03:28 by ebennace         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ int	inverse_sorted(t_stack **A)
 		if (iter->prev)
 		{
 			if (iter->value < iter->prev->value)
-				return (0) ;
+				return (0);
 			iter = iter->prev;
 		}
 		else

@@ -6,7 +6,7 @@
 /*   By: ebennace <ebennace@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/14 11:44:58 by ebennace          #+#    #+#             */
-/*   Updated: 2022/04/22 09:26:58 by ebennace         ###   ########.fr       */
+/*   Updated: 2022/04/22 16:08:17 by ebennace         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,11 @@ void	sort_a(t_stack **A, t_stack **B)
 
 	if (!(*A)->top)
 		return ;
+	if ((*A)->size < 4)
+	{
+		sort_fast(A, B);
+		return ;
+	}
 	while (!(is_sorted(A)))
 	{
 		size = (*A)->size;
