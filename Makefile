@@ -6,35 +6,33 @@
 #    By: ebennace <ebennace@student.42lausanne.c    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/21 14:19:55 by ebennace          #+#    #+#              #
-#    Updated: 2022/04/21 14:19:56 by ebennace         ###   ########.fr        #
+#    Updated: 2022/04/22 09:53:30 by ebennace         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 
 NAME = push_swap
 
-SRCS		= manage_args.c \
-			  main.c \
-			  42_function_part_1.c \
-			  42_function_part_2.c \
-			  utils.c \
-			  sorting_function.c \
-			  display.c \
-			  create.c \
-			  assign_stack.c \
-			  connect.c \
-			  split_stack.c \
-			  math_utils.c \
-			  compare.c \
-			  get.c \
-			  choose_rotate.c \
-			  sorting.c \
-			  check.c \
-			  ft_atol.c \
-			  candidate.c \
-			  free_all.c
-
-
+SRCS		= 	main.c \
+				./command_42/42_function_part_1.c \
+				./command_42/42_function_part_2.c \
+				./utils/utils.c \
+				./utils/display.c \
+				./utils/math_utils.c \
+				./utils/get.c \
+				./utils/compare.c \
+				./utils/ft_atol.c \
+				./utils/free_all.c \
+				./sorting_function/sorting_function.c \
+				./sorting_function/sorting.c \
+				./sorting_function/choose_rotate.c \
+				./sorting_function/candidate.c \
+				./sorting_function/split_stack.c \
+				./manage_input/create.c \
+				./manage_input/assign_stack.c \
+				./manage_input/check.c \
+				./manage_input/connect.c \
+				./manage_input/manage_args.c \
 
 OBJS			= $(SRCS:.c=.o)
 CC				= clang
@@ -63,7 +61,7 @@ sanitize : 		$(OBJS)
 				
 
 test : 
-				./$(NAME) `python3 generator.py 0 1000 5`
+				./$(NAME)  `python3 visualiser_generator/generator.py 0 1000 200`
 
 lldb:
 				$(CC) -g $(SRCS) libft/libft.a -o $(NAME)

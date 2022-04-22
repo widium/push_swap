@@ -6,7 +6,7 @@
 /*   By: ebennace <ebennace@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/14 15:47:11 by ebennace          #+#    #+#             */
-/*   Updated: 2022/04/21 11:28:37 by ebennace         ###   ########.fr       */
+/*   Updated: 2022/04/22 09:59:21 by ebennace         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ long long int	ft_atol(const char *str);
 
 void			set_stack_null(t_stack *A);
 t_stack			*assign_stack_with_1_element(char **argv, int argc, t_stack *A);
-t_stack			*assign_stack_with_multiple_element(char **argv, int argc, t_stack *A);
+t_stack			*assign_stack_multi_element(char **argv, int argc, t_stack *A);
 t_node			*create_and_assign_node(char **argv, int i);
 t_stack			*assign_stack(t_node *bot, t_node *top, int size, t_stack *A);
 t_node			*create_assign_connect_node(t_node *node, char **argv, int i);
