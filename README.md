@@ -11,5 +11,5 @@ Structure Stack with chained list
 ![](https://i.imgur.com/CKQMQA3.png)
 
 ### Sorted Algorithm
-![](https://i.imgur.com/2p1HoWN.png)
+![](https://user-images.githubusercontent.com/85416801/165092209-17783057-8ade-4e3f-8f09-a2071be2a25a.png)
 
