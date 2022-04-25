@@ -6,7 +6,7 @@
 /*   By: ebennace <ebennace@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/14 14:36:49 by ebennace          #+#    #+#             */
-/*   Updated: 2022/04/22 09:50:32 by ebennace         ###   ########.fr       */
+/*   Updated: 2022/04/25 10:10:25 by ebennace         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,11 +48,9 @@ void	split_stack_group(t_stack **A, t_stack **B)
 	int		size;
 	int		group;
 	int		size_group;
-	int		range;
 
 	size = (*A)->size;
 	size_group = create_size_group(A);
-	range = get_range(A);
 	group = size_group;
 	push_group_to_b(A, B, group, size_group);
 }

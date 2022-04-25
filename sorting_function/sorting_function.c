@@ -6,7 +6,7 @@
 /*   By: ebennace <ebennace@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/14 11:44:58 by ebennace          #+#    #+#             */
-/*   Updated: 2022/04/22 16:08:17 by ebennace         ###   ########.fr       */
+/*   Updated: 2022/04/25 11:31:52 by ebennace         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,9 +62,13 @@ void	sort_a(t_stack **A, t_stack **B)
 		top_prev = top->prev;
 		if (is_min(A, top->value) && size > 3)
 			push_b(A, B);
-		if (swap_min_max(A, top_prev, top))
-			swap_a(A);
-		choose_rotate_min(A);
+		else
+			choose_rotate_min(A);
+		if (size < 4)
+			sort_fast(A, B);
+		// if (swap_min_max(A, top_prev, top))
+		// 	swap_a(A);
+		// choose_rotate_min(A);
 	}
 }
 

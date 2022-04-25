@@ -6,7 +6,7 @@
 /*   By: ebennace <ebennace@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/14 11:53:50 by ebennace          #+#    #+#             */
-/*   Updated: 2022/04/22 09:27:39 by ebennace         ###   ########.fr       */
+/*   Updated: 2022/04/25 14:18:04 by ebennace         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,14 @@ void	sort(char **argv, int argc)
 	if (result == 0)
 	{
 		ft_putstr_fd("Error\n", 1);
+		free_all(a, b);
 		return ;
 	}
 	if (result == -1)
+	{
 		return ;
+		free_all(a, b);
+	}
 	if (is_sorted(&a))
 		return ;
 	if (a->size < 4)
