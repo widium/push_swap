@@ -6,7 +6,7 @@ Test in vs code with `python env` -> [big_O_notations_push_swap/test_big_O.ipynb
 
 ***
 ### Objectif :
-![](https://i.imgur.com/yt55Xbb.png)
+![](https://i.imgur.com/7iMWUzV.png)
 
 ***
 #### Fonction Obligatoire (11 fonctions) :
