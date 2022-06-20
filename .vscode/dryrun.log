@@ -1,0 +1,26 @@
+make --dry-run --always-make --keep-going --print-directory
+make: Entering directory '/home/widium/Programming/42_cursus/push_swap'
+clang -c -g -o main.o main.c
+clang -c -g -o command_42/42_function_part_1.o command_42/42_function_part_1.c
+clang -c -g -o command_42/42_function_part_2.o command_42/42_function_part_2.c
+clang -c -g -o utils/utils.o utils/utils.c
+clang -c -g -o utils/display.o utils/display.c
+clang -c -g -o utils/math_utils.o utils/math_utils.c
+clang -c -g -o utils/get.o utils/get.c
+clang -c -g -o utils/compare.o utils/compare.c
+clang -c -g -o utils/ft_atol.o utils/ft_atol.c
+clang -c -g -o utils/free_all.o utils/free_all.c
+clang -c -g -o sorting_function/sorting_function.o sorting_function/sorting_function.c
+clang -c -g -o sorting_function/sorting.o sorting_function/sorting.c
+clang -c -g -o sorting_function/choose_rotate.o sorting_function/choose_rotate.c
+clang -c -g -o sorting_function/candidate.o sorting_function/candidate.c
+clang -c -g -o sorting_function/split_stack.o sorting_function/split_stack.c
+clang -c -g -o manage_input/create.o manage_input/create.c
+clang -c -g -o manage_input/assign_stack.o manage_input/assign_stack.c
+clang -c -g -o manage_input/check.o manage_input/check.c
+clang -c -g -o manage_input/connect.o manage_input/connect.c
+clang -c -g -o manage_input/manage_args.o manage_input/manage_args.c
+make -C libft
+clang -g main.o ./command_42/42_function_part_1.o ./command_42/42_function_part_2.o ./utils/utils.o ./utils/display.o ./utils/math_utils.o ./utils/get.o ./utils/compare.o ./utils/ft_atol.o ./utils/free_all.o ./sorting_function/sorting_function.o ./sorting_function/sorting.o ./sorting_function/choose_rotate.o ./sorting_function/candidate.o ./sorting_function/split_stack.o ./manage_input/create.o ./manage_input/assign_stack.o ./manage_input/check.o ./manage_input/connect.o ./manage_input/manage_args.o libft/libft.a -o push_swap
+make: Leaving directory '/home/widium/Programming/42_cursus/push_swap'
+ 

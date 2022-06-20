@@ -1,0 +1,8 @@
+{
+    "makefile.extensionOutputFolder": "./.vscode",
+    "files.associations": {
+        "*.tcc": "c",
+        "list": "c",
+        "push_swap.h": "c"
+    }
+}

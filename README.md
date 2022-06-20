@@ -4,6 +4,19 @@ Test in vs code with `python env` -> [big_O_notations_push_swap/test_big_O.ipynb
 
 ![](https://i.imgur.com/6jwONGo.png)
 
+***
+### Objectif :
+![](https://i.imgur.com/yt55Xbb.png)
+
+***
+#### Fonction Obligatoire (11 fonctions) :
+![](https://i.imgur.com/KNiCf6X.png)
+![](https://i.imgur.com/bzgSka7.png)
+![](https://i.imgur.com/ZTpX8S2.png)
+![](https://i.imgur.com/hmLyQJT.png)
+![](https://i.imgur.com/T4B2dqm.png)
+***
+
 ### Structure 
 Structure Stack with chained list
 
